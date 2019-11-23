@@ -4,7 +4,13 @@
 
 # include .env
 # export
+
 SHELL = /bin/sh
+
+# COPY_ENV = [ -f .env ] || cp $(pwd)/.env.example $(pwd)/.env
+
+docker_bin := $(shell command -v docker 2> /dev/null)
+docker_compose_bin := $(shell command -v docker-compose 2> /dev/null)
 
 .DEFAULT_GOAL := help
 
@@ -15,10 +21,10 @@ help: ## Show this help
 		Usage example:\n\
 	    	make up"
 
-emulator: ##run emulator
+emulator: ## run emulator
 	@cd ~/Android/Sdk/tools && ./emulator -avd Pixel_2_XL_API_28
 
-home:
+home: ## export JAVA_HOME
 	@cd ~/Android/Sdk/tools && export JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre"
 
 
