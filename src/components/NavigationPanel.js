@@ -11,8 +11,8 @@ const NavigationPanel = (AppNavigator) => (
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.navigationButton}
-        // onPress={() => AppNavigator.props.navigation.navigate('Five')}
-        onPress={() => switchPage()}
+        onPress={() => AppNavigator.props.props.navigation.navigate('Five')}
+        // onPress={() => switchPage(AppNavigator)}
       >
         <Text style={styles.text}>
           Конвертер из одной валюты в другую
@@ -21,9 +21,9 @@ const NavigationPanel = (AppNavigator) => (
     </View>
 )
 
-const switchPage = (AppNavigator) => {
-  console.log('tet', AppNavigator)
-}
+// const switchPage = (AppNavigator) => {
+//   console.log('tet', AppNavigator.props.props);
+// }
 
 const styles = StyleSheet.create({
   container: {
