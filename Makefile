@@ -21,7 +21,7 @@ help: ## Show this help
 		Usage example:\n\
 	    	make up"
 
-emulator: ## run emulator
+emulator: ## run emulator Pixel_2_XL_API_28
 	@cd ~/Android/Sdk/tools && ./emulator -avd Pixel_2_XL_API_28
 
 home: ## export JAVA_HOME
