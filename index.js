@@ -7,7 +7,6 @@ import configureStore from './src/store/configureStore';
 import App from './src/App';
 
 const store = configureStore();
-// console.log('>>', store);
 
 
 const root = () => (
