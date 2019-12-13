@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { TodoList } from './TodoList';
+import { CoursesList } from './CoursesList';
 
 const rootReducer = combineReducers({
-  TodoList,
+  CoursesList: CoursesList,
 });
 
 export default rootReducer;

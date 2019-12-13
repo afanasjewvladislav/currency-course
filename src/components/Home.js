@@ -3,9 +3,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import {useSelector} from 'react-redux';
 
 import NavigationPanel from './NavigationPanel';
+import { CoursesList } from '../store/reducers/CoursesList'
 
 const Home = (props) => {
-  const lists = useSelector((state) => state.TodoList.lists);
+  const lists = useSelector((state) => state.CoursesList.lists);
   const Body = () => (
     <View style={styles.container}>
       <View style={
