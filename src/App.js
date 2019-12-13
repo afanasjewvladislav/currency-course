@@ -1,24 +1,21 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import Home from './components/Home';
-import SecondScreen from './components/SecondScreen';
-import Five from './components/Five';
+// import Home from './components/Home';
+import CurrencyConverter from './components/CurrencyConverter';
+import CurrentCourses from './containers/CurrentCourses';
 
 
 const App = (AppNavigator) => (
-  <Home props={AppNavigator}/>
+  <CurrentCourses props={AppNavigator}/>
 )
 
 const AppNavigator = createStackNavigator({
-  Home: {
+  CurrentCourses: {
     screen: App,
   },
-  SecondScreen: {
-    screen: SecondScreen,
-  },
-  Five: {
-    screen: Five,
+  CurrencyConverter: {
+    screen: CurrencyConverter,
   },
 });
 
