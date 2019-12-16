@@ -6,7 +6,6 @@ import NavigationPanel from './NavigationPanel'
 
 const Home = props => {
   const lists = useSelector(state => state.CoursesList.lists)
-  // console.log('lists', lists);
 
   const Body = () => (
     <View style={styles.container}>
@@ -14,18 +13,25 @@ const Home = props => {
         <ScrollView style={styles.scrollView}>
           <View style={
             {
-              flex: 15,
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              // justifyContent: 'center',
-              // alignItems: 'stretch',
             }
           }>
             {lists.map(item =>
-              (<Text key={item.ID}>
-                {item.CharCode} - {item.Name} - {item.Value}
-              </Text>),
+              (<View key={item.ID}
+               style={
+                 {
+                   width: 400,
+                   flexDirection: 'row',
+                   justifyContent: 'space-between',
+                   alignItems: 'space-between',
+                 }
+               }>
+                <Text>{item.CharCode}</Text>
+                <Text>{item.Name}</Text>
+                <Text>{item.Value}</Text>
+              </View>),
             )}
           </View>
         </ScrollView>

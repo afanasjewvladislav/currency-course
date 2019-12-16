@@ -8,6 +8,7 @@ const getData = payload => {
   let arr = []
   for (const key in value) {
     if(key === 'Valute') {
+      // arr.push(initialObject)
       arr = Object.values(value[key]).map(el => el)
     }
   }
@@ -17,8 +18,8 @@ const getData = payload => {
 export function CoursesList (state = initialState, payload) {
   switch (payload.type) {
     case 'GET_COURSES':
-      const test = getData(payload)
-      return { ...state, lists: [...test] };
+      const array = getData(payload)
+      return { ...state, lists: [...array] };
     default:
       return state
   }
