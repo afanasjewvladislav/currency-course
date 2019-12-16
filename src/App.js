@@ -6,7 +6,7 @@ import CurrencyConverter from './components/CurrencyConverter';
 import CurrentCourses from './containers/CurrentCourses';
 
 
-const App = (AppNavigator) => (
+const App = AppNavigator => (
   <CurrentCourses props={AppNavigator}/>
 )
 
