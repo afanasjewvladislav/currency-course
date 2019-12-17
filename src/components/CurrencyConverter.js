@@ -4,35 +4,32 @@ import RNPickerSelect from 'react-native-picker-select';
 import { useSelector } from 'react-redux'
 
 const CurrencyConverter = () => {
-  const [firstValue, setFirstValue] = useState();
-  const [secondValue, setSecondValue] = useState();
+  const [сurrency, setCurrency] = useState();
   const [sum, setSum] = useState();
 
   const lists = useSelector(state => state.CoursesList.lists);
-  console.log('>>', firstValue, secondValue, sum);
+  console.log('>>', сurrency, sum);
+
+  const getConvertCurrency = () => {
+    return (sum / сurrency).toFixed(2);
+  };
 
   return (
     <View style={styles.container}>
       <RNPickerSelect
-        onValueChange={value => setFirstValue(value)}
-        value={firstValue}
-        items={lists}
-        style={styles.inputAndroid}
-      />
-      <RNPickerSelect
-        value={secondValue}
-        onValueChange={value => setSecondValue(value)}
+        onValueChange={value => setCurrency(value)}
+        value={сurrency}
         items={lists}
         style={styles.inputAndroid}
       />
       <TextInput style = {styles.input}
         keyboardType='numeric'
-        placeholder = "Введите сумму"
+        placeholder = "Введите сумму в рублях"
         placeholderTextColor = "#9a73ef"
         onChangeText = {text => setSum(text)}
         value={sum}
       />
-      <Text>{sum/secondValue}</Text>
+      <Text>{getConvertCurrency()}</Text>
     </View>
   )
 }
@@ -40,9 +37,6 @@ const CurrencyConverter = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
-    // alignItems: 'space-between',
   },
   inputAndroid: {
     fontSize: 18,
