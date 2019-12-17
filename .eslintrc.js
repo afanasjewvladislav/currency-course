@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    "react-native/react-native": true,
   },
   extends: [
     'eslint-config-react-native',
@@ -24,6 +25,9 @@ module.exports = {
     'jest',
     'react',
   ],
+  settings: {
+    'react-native/style-sheet-object-names': ['EStyleSheet', 'OtherStyleSheet', 'PStyleSheet']
+  },
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-consistent-return': 'off',
