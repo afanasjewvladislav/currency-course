@@ -3,7 +3,6 @@ export const initialState = {
 }
 
 const getData = payload => {
-  // console.log('action.payload', payload.payload)
   const value = payload.payload
   let arr = []
   for (const key in value) {
@@ -14,11 +13,24 @@ const getData = payload => {
   return arr;
 }
 
+const getCurrensy = (payload, lists) => {
+  // console.log('>>', payload, lists)
+  const {сurrency, sum} = payload;
+  const currencyInRubles = sum * сurrency;
+
+  console.log('>>', сurrency, sum)
+}
+
 export function CoursesList (state = initialState, payload) {
   switch (payload.type) {
     case 'GET_COURSES':
       const array = getData(payload)
       return { ...state, lists: [...array] };
+    case 'GET_CURRENCY':
+      // console.log('payload', payload);
+      const arr = getCurrensy(payload.payload, state)
+    // const array = getData(payload
+    // return { ...state, lists: [...array] };
     default:
       return state
   }

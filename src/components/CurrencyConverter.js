@@ -1,17 +1,20 @@
-import { StyleSheet, TextInput, View, Text, Picker } from 'react-native';
+import { StyleSheet, TextInput, View, Text, Picker, SafeAreaView, ScrollView} from 'react-native';
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { getCurrency } from '../store/actions/actions';
 
 const CurrencyConverter = () => {
   const [сurrency, setCurrency] = useState();
   const [sum, setSum] = useState();
 
   const lists = useSelector(state => state.CoursesList.lists);
+  const dispatch = useDispatch();
 
   const getConvertCurrency = () => {
-    const result = (sum / сurrency).toFixed(2);
-    const accessAllowed = (isNaN(result)) ? 0 : result;
-    return accessAllowed;
+    dispatch(getCurrency({сurrency, sum}));
+    // const result = (sum / сurrency).toFixed(2);
+    // const accessAllowed = (isNaN(result)) ? 0 : result;
+    // return accessAllowed;
   };
 
   return (
@@ -36,6 +39,19 @@ const CurrencyConverter = () => {
         </Picker>
       </View>
        <Text>{getConvertCurrency()}</Text>
+      <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.scrollView}>
+          {lists.map(item =>
+              (<View key={item.ID} style={styles.wrapper}>
+                <Text >{item.CharCode}</Text>
+                <View style={styles.textContent}>
+                  <Text>{item.Name}</Text>
+                </View>
+                <Text>{(item.Value).toFixed(2)}</Text>
+              </View>),
+            )}
+        </ScrollView>
+      </SafeAreaView>
     </View>
   )
 }
