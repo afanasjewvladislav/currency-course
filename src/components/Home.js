@@ -11,29 +11,15 @@ const Home = props => {
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
-          <View style={
-            {
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }
-          }>
-            {lists.map(item =>
-              (<View key={item.ID}
-               style={
-                 {
-                   width: 400,
-                   flexDirection: 'row',
-                   justifyContent: 'space-between',
-                   alignItems: 'space-between',
-                 }
-               }>
-                <Text>{item.CharCode}</Text>
-                <Text>{item.Name}</Text>
-                <Text>{item.Value}</Text>
+          {lists.map(item =>
+              (<View key={item.ID} style={styles.wrapper}>
+                <Text >{item.CharCode}</Text>
+                <View style={styles.textContent}>
+                  <Text>{item.Name}</Text>
+                </View>
+                <Text>{(item.Value).toFixed(2)}</Text>
               </View>),
             )}
-          </View>
         </ScrollView>
       </SafeAreaView>
       <NavigationPanel props={props}/>
@@ -48,6 +34,17 @@ const Home = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  wrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 10,
+    // alignItems: 'space-between',
+  },
+  textContent: {
+    width: 250,
+    // backgroundColor: 'skyblue',
+    alignItems: 'center',
   },
 })
 
