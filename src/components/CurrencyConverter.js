@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View, Text } from 'react-native';
 import React, {useState} from 'react';
 import RNPickerSelect from 'react-native-picker-select';
 import { useSelector } from 'react-redux'
@@ -6,37 +6,34 @@ import { useSelector } from 'react-redux'
 const CurrencyConverter = () => {
   const [firstValue, setFirstValue] = useState();
   const [secondValue, setSecondValue] = useState();
-  const [summ, setSumm] = useState();
+  const [sum, setSum] = useState();
 
   const lists = useSelector(state => state.CoursesList.lists);
-  console.log('>>', firstValue, secondValue, summ);
+  console.log('>>', firstValue, secondValue, sum);
 
-  const Converter = () => (
+  return (
     <View style={styles.container}>
       <RNPickerSelect
-        onValueChange={(value) => setFirstValue(value)}
+        onValueChange={value => setFirstValue(value)}
         value={firstValue}
         items={lists}
         style={styles.inputAndroid}
       />
       <RNPickerSelect
         value={secondValue}
-        onValueChange={(value) => setSecondValue(value)}
+        onValueChange={value => setSecondValue(value)}
         items={lists}
         style={styles.inputAndroid}
       />
       <TextInput style = {styles.input}
-        underlineColorAndroid = "transparent"
+        keyboardType='numeric'
         placeholder = "Введите сумму"
         placeholderTextColor = "#9a73ef"
-        onChangeText={(value) => setSumm(value)}
-        value={summ}
+        onChangeText = {text => setSum(text)}
+        value={sum}
       />
+      <Text>{sum/secondValue}</Text>
     </View>
-  )
-
-  return (
-    <Converter/>
   )
 }
 
