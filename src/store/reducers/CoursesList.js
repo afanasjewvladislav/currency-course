@@ -8,12 +8,7 @@ const getData = payload => {
   let arr = []
   for (const key in value) {
     if(key === 'Valute') {
-      arr = Object.values(value[key]).map(el => {
-        el.label = el.Name;
-        el.value = el.Value;
-        // console.log('el', el);
-        return el;
-      })
+      arr = Object.values(value[key]).map(el => el);
     }
   }
   return arr;
