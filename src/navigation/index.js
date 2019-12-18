@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 // import { useSelector } from 'react-redux'
 import CurrencyConverter from '../components/CurrencyConverter';
-import CurrentCourses from '../containers/CurrentCourses';
+import App from '../../App';
 
 // const RootNavigation = () => {
 //   const screen = useSelector(state => state.Screens.screens);
@@ -19,7 +19,7 @@ import CurrentCourses from '../containers/CurrentCourses';
 
 const AppNavigator = createStackNavigator({
   CurrentCourses: {
-    screen: CurrentCourses,
+    screen: App,
   },
   CurrencyConverter: {
     screen: CurrencyConverter,

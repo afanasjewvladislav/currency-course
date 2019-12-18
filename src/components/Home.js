@@ -7,7 +7,6 @@ import NavigationPanel from './NavigationPanel'
 const Home = props => {
   const lists = useSelector(state => state.CoursesList.lists)
   // const screen = useSelector(state => state.Screens.screens);
-  // console.log('props', props)
 
   const Body = () => (
     <View style={styles.container}>

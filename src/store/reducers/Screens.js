@@ -1,11 +1,10 @@
 import CurrencyConverter from '../../components/CurrencyConverter';
-import CurrentCourses from '../../containers/CurrentCourses';
-import App from '../../App'
+import App from '../../../App'
 
 export const initialState = {
   screens: {
     CurrentCourses: {
-      screen: CurrentCourses,
+      screen: App,
     },
     CurrencyConverter: {
       screen: CurrencyConverter,

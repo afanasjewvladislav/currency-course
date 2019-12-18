@@ -1,11 +1,10 @@
 import React from 'react'
 import {View} from 'react-native'
 import { ThemeProvider, Button } from 'react-native-elements'
-// import MainNavigation from '../navigation/index'
 
 const NavigationPanel = (AppNavigator) => {
   const props = AppNavigator.props.props.props;
-  // console.log('>>', MainNavigation);
+  console.log('>>', props);
 
   const theme = {
     Button: {
@@ -30,8 +29,8 @@ const NavigationPanel = (AppNavigator) => {
       <View>
         <Button
           title="Конвертер из одной валюты в другую"
-          onPress={() => switchPage(navigation)}
-          // onPress={() => props.navigation.navigate('CurrencyConverter')}
+          // onPress={() => switchPage(props)}
+          onPress={() => props.navigation.navigate('CurrencyConverter')}
         />
       </View>
     </ThemeProvider>
@@ -42,8 +41,8 @@ const NavigationPanel = (AppNavigator) => {
   )
 }
 
-const switchPage = (AppNavigator) => {
-  console.log('tet', AppNavigator)
-}
+// const switchPage = (AppNavigator) => {
+//   console.log('tet', AppNavigator)
+// }
 
 export default NavigationPanel
