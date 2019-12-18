@@ -1,15 +1,15 @@
-import CurrencyConverter from '../../components/CurrencyConverter';
-import App from '../../../App'
+// import CurrencyConverter from '../../components/CurrencyConverter';
+// import App from '../../../App'
 
 export const initialState = {
-  screens: {
-    CurrentCourses: {
-      screen: App,
-    },
-    CurrencyConverter: {
-      screen: CurrencyConverter,
-    },
-  },
+  // screens: {
+  //   CurrentCourses: {
+  //     screen: App,
+  //   },
+  //   CurrencyConverter: {
+  //     screen: CurrencyConverter,
+  //   },
+  // },
   navigations: {},
 }
 
