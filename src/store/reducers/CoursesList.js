@@ -14,23 +14,26 @@ const getData = payload => {
 }
 
 const getCurrensy = (payload, lists) => {
-  // console.log('>>', payload, lists)
   const {сurrency, sum} = payload;
   const currencyInRubles = sum * сurrency;
 
-  console.log('>>', сurrency, sum)
+  lists.lists.map(item => {
+    const convertValue = currencyInRubles/item.Value;
+    item.convertValue = convertValue;
+    if (isNaN(currencyInRubles) || currencyInRubles === 0) {
+      item.convertValue = item.Value
+    }
+    return item;
+  });
+  return lists;
 }
 
 export function CoursesList (state = initialState, payload) {
   switch (payload.type) {
     case 'GET_COURSES':
-      const array = getData(payload)
-      return { ...state, lists: [...array] };
+      return { ...state, lists: [...getData(payload)] };
     case 'GET_CURRENCY':
-      // console.log('payload', payload);
-      const arr = getCurrensy(payload.payload, state)
-    // const array = getData(payload
-    // return { ...state, lists: [...array] };
+      return getCurrensy(payload.payload, state)
     default:
       return state
   }

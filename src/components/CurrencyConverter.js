@@ -12,9 +12,6 @@ const CurrencyConverter = () => {
 
   const getConvertCurrency = () => {
     dispatch(getCurrency({сurrency, sum}));
-    // const result = (sum / сurrency).toFixed(2);
-    // const accessAllowed = (isNaN(result)) ? 0 : result;
-    // return accessAllowed;
   };
 
   return (
@@ -47,7 +44,7 @@ const CurrencyConverter = () => {
                 <View style={styles.textContent}>
                   <Text>{item.Name}</Text>
                 </View>
-                <Text>{(item.Value).toFixed(2)}</Text>
+                <Text>{(item.convertValue).toFixed(2)}</Text>
               </View>),
             )}
         </ScrollView>

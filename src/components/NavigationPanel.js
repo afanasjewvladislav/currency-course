@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import {View} from 'react-native'
 import { ThemeProvider, Button } from 'react-native-elements'
 
 const NavigationPanel = (AppNavigator) => {
@@ -43,17 +43,5 @@ const NavigationPanel = (AppNavigator) => {
 // const switchPage = (AppNavigator) => {
 //   console.log('tet', AppNavigator)
 // }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  text: {
-    color: 'rgb(255,255,255)',
-    alignItems: 'center',
-    fontSize: 12,
-    margin: 10,
-  },
-})
 
 export default NavigationPanel
