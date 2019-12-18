@@ -1,10 +1,11 @@
 import React from 'react'
 import {View} from 'react-native'
 import { ThemeProvider, Button } from 'react-native-elements'
+import { useSelector } from 'react-redux'
 
-const NavigationPanel = (AppNavigator) => {
-  const props = AppNavigator.props.props.props;
-  console.log('>>', props);
+const NavigationPanel = () => {
+  const navigations = useSelector(state => state.Screens.navigations)
+  // console.log('>>', navigations);
 
   const theme = {
     Button: {
@@ -30,7 +31,7 @@ const NavigationPanel = (AppNavigator) => {
         <Button
           title="Конвертер из одной валюты в другую"
           // onPress={() => switchPage(props)}
-          onPress={() => props.navigation.navigate('CurrencyConverter')}
+          onPress={() => navigations.navigation.navigate('CurrencyConverter')}
         />
       </View>
     </ThemeProvider>

@@ -1,9 +1,8 @@
 import React from 'react';
-import CurrentCourses from './src/containers/CurrentCourses';
+import MainNavigation from './src/navigation/index';
 
-
-const App = props => (
-    <CurrentCourses props={props}/>
+const App = () => (
+    <MainNavigation />
   )
 
 export default App;

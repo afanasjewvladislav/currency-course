@@ -2,6 +2,7 @@ const axios = require('axios');
 
 export const GET_COURSES = 'GET_COURSES';
 export const GET_CURRENCY = 'GET_CURRENCY';
+export const SET_NAVIGATIONS = 'SET_NAVIGATIONS';
 export const SET_ERROR = 'SET_ERROR';
 
 export function getCourses() {
@@ -21,6 +22,13 @@ export function getCourses() {
 export function getCurrency(payload) {
   return {
     type: GET_CURRENCY,
+    payload,
+  };
+}
+
+export function setNavigation(payload) {
+  return {
+    type: SET_NAVIGATIONS,
     payload,
   };
 }
