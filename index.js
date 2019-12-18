@@ -5,20 +5,16 @@ import { Provider } from 'react-redux';
 
 import {name as appName} from './app.json';
 import configureStore from './src/store/configureStore';
-import App from './src/App';
+// import App from './src/App';
+import MainNavigation from './src/navigation/index';
 
 const store = configureStore();
 
 
 const root = () => (
   <Provider store = { store }>
-    {/* <View>
-      <Text>just red</Text>
-      <Text>just bigBlue</Text>
-      <Text>bigBlue, then red</Text>
-      <Text>red, then bigBlue</Text>
-    </View> */}
-    <App />
+    {/* <App /> */}
+    <MainNavigation />
   </Provider>
 )
 

@@ -5,18 +5,34 @@ import { createStackNavigator } from 'react-navigation-stack';
 import CurrencyConverter from './components/CurrencyConverter';
 import CurrentCourses from './containers/CurrentCourses';
 
+import MainNavigation from './navigation/index'
 
-const App = AppNavigator => (
-  <CurrentCourses props={AppNavigator}/>
-)
 
-const AppNavigator = createStackNavigator({
-  CurrentCourses: {
-    screen: App,
-  },
-  CurrencyConverter: {
-    screen: CurrencyConverter,
-  },
-});
+// const App = AppNavigator => (
+//   <CurrentCourses props={AppNavigator}/>
+// )
 
-export default createAppContainer(AppNavigator);
+
+const App = () => {
+  console.log('MainNavigation', MainNavigation);
+  return (
+    // <MainNavigation />
+    <CurrentCourses/>
+  )
+}
+
+// const AppNavigator = createStackNavigator({
+//   CurrentCourses: {
+//     screen: App,
+//   },
+//   CurrencyConverter: {
+//     screen: CurrencyConverter,
+//   },
+// });
+// const te = createAppContainer(AppNavigator);
+// console.log('>', te)
+
+// export default createAppContainer(AppNavigator);
+
+
+export default App;
