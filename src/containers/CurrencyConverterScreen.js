@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { useSelector,useDispatch } from 'react-redux'
 import { getCurrency } from '../store/actions/actions';
 
-const CurrencyConverter = () => {
+const CurrencyConverterScreen = () => {
   const [сurrency, setCurrency] = useState();
   const [sum, setSum] = useState();
 
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CurrencyConverter;
+export default CurrencyConverterScreen;

@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import HomePage from '../components/Home'
-import { getCourses, setNavigation } from '../store/actions/actions'
+import { getCourses } from '../store/actions/actions'
 
-const CurrentCourses = AppNavigator => {
-  const dispatch = useDispatch()
+const MainScreen = AppNavigator => {
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCourses());
-    dispatch(setNavigation(AppNavigator));
   })
 
   return (
     <View style={styles.container}>
-      <HomePage/>
+      <HomePage />
     </View>
   )
 }
@@ -25,4 +24,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default CurrentCourses
+export default MainScreen

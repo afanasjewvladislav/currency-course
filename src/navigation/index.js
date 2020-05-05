@@ -1,33 +1,15 @@
-// import React from 'react'
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { useSelector } from 'react-redux'
-import CurrencyConverter from '../components/CurrencyConverter';
-import CurrentCourses from '../containers/CurrentCourses';
-// import App from '../../App';
-
-// const RootNavigation = () => {
-//   const screen = useSelector(state => state.Screens.screens);
-//   console.log('screen', screen)
-//   const AppNavigator = createStackNavigator(screen);
-//   return AppNavigator;
-//   // return createAppContainer(AppNavigator);
-// }
-
-// // export default RootNavigation;
-// export default createAppContainer(RootNavigation);
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import { MainLayer } from "./MainLayer";
 
 
-const AppNavigator = createStackNavigator({
-  CurrentCourses: {
-    screen: CurrentCourses,
-  },
-  CurrencyConverter: {
-    screen: CurrencyConverter,
-  },
-},
-);
+const AppNavigator = createSwitchNavigator({
+  Root: MainLayer,
+},{
+  initialRouteName: "Root",
+  cardStyle: { shadowColor: 'transparent' },
+  navigationOptions: () => ({
+    headerForceInset: { top: 'never' },
+  }),
+});
 
 export default createAppContainer(AppNavigator);
-
-

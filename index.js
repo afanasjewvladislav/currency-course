@@ -8,7 +8,6 @@ import App from './App';
 
 const store = configureStore();
 
-
 const root = () => (
   <Provider store = { store }>
     <App />

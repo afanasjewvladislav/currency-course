@@ -2,8 +2,6 @@ import React from 'react'
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux'
 
-import NavigationPanel from './NavigationPanel'
-
 const Home = () => {
   const lists = useSelector(state => state.CoursesList.lists)
   // const screen = useSelector(state => state.Screens.screens);
@@ -23,7 +21,6 @@ const Home = () => {
             )}
         </ScrollView>
       </SafeAreaView>
-      <NavigationPanel />
     </View>
   )
 
