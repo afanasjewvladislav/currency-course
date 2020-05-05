@@ -1,10 +1,10 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'reactNative' do
-  # Pods for reactNative
+target 'currencyCourse' do
+  # Pods for currencyCourse
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
-  pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
+  pod 'FBcurrencyCourseSpec', :path => "../node_modules/react-native/Libraries/FBcurrencyCourseSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
   pod 'RCTTypeSafety', :path => "../node_modules/react-native/Libraries/TypeSafety"
   pod 'React', :path => '../node_modules/react-native/'
@@ -34,7 +34,7 @@ target 'reactNative' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'reactNativeTests' do
+  target 'currencyCourseTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +42,10 @@ target 'reactNative' do
   use_native_modules!
 end
 
-target 'reactNative-tvOS' do
-  # Pods for reactNative-tvOS
+target 'currencyCourse-tvOS' do
+  # Pods for currencyCourse-tvOS
 
-  target 'reactNative-tvOSTests' do
+  target 'currencyCourse-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
