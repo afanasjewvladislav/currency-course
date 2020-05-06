@@ -19,8 +19,8 @@ const MainTabNavigator = createBottomTabNavigator({
         return (
           <HomeIcon
             color={focused ? '#CE3A6E' : 'rgb(66,92,129)'}
-            width={25}
-            height={25}
+            width={30}
+            height={30}
           />
         )
       },
@@ -33,8 +33,8 @@ const MainTabNavigator = createBottomTabNavigator({
         return (
           <MoneyBagIcon
             color={focused ? '#CE3A6E' : 'rgb(66,92,129)'}
-            width={28}
-            height={28}
+            width={32}
+            height={32}
           />
         )
       },
@@ -46,7 +46,13 @@ const MainTabNavigator = createBottomTabNavigator({
       showLabel: false,
       keyboardHidesTabBar: false,
       style: {
-        backgroundColor: 'rgb(4,30,67)',
+        backgroundColor: '#041E43',
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
+        height: 54,
+        margin: 0,
+        borderTopWidth: 0,
       }
     },
   }

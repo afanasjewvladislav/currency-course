@@ -7,13 +7,18 @@ const getData = payload => {
   let arr = []
   for (const key in value) {
     if(key === 'Valute') {
-      arr = Object.values(value[key]).map(el => el);
+      arr = Object.values(value[key]).map(el => {
+        el.difference = (el.Value - el.Previous).toFixed(4);
+        el.Value = el.Value.toFixed(2);
+        el.percentageChange = ((el.difference / el.Value) * 100).toFixed(2);
+        return el;
+      });
     }
   }
   return arr;
 }
 
-const getCurrensy = (payload, lists) => {
+const getCurrency = (payload, lists) => {
   const {сurrency, sum} = payload;
   const currencyInRubles = sum * сurrency;
 
@@ -21,7 +26,7 @@ const getCurrensy = (payload, lists) => {
     const convertValue = currencyInRubles/item.Value;
     item.convertValue = convertValue;
     if (isNaN(currencyInRubles) || currencyInRubles === 0) {
-      item.convertValue = item.Value
+      item.convertValue = item.Value;
     }
     return item;
   });
@@ -33,7 +38,7 @@ export function CoursesList (state = initialState, payload) {
     case 'GET_COURSES':
       return { ...state, lists: [...getData(payload)] };
     case 'GET_CURRENCY':
-      return getCurrensy(payload.payload, state)
+      return getCurrency(payload.payload, state)
     default:
       return state
   }

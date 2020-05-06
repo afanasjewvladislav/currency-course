@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 export const GET_COURSES = 'GET_COURSES';
 export const GET_CURRENCY = 'GET_CURRENCY';
