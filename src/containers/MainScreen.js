@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react'
-import { StyleSheet, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import {RefreshControl, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import HomePage from '../components/Home'
-import { getCourses } from '../store/actions/actions'
+
+import { getCourses } from '../store/actions/actions';
+
+import Preloader from '../components/Preloader.js';
 
 const MainScreen = AppNavigator => {
   const dispatch = useDispatch();
+
+  const lists = useSelector(state => state.CoursesList.lists);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     dispatch(getCourses(setIsLoading));

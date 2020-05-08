@@ -33,6 +33,7 @@ module.exports = {
     'no-consistent-return': 'off',
     'no-console': 'off',
     'no-prototype-builtins': 'off',
+    'no-use-before-define': 'off',
     'no-param-reassign': ["error", {
       "props": false,
     }],
@@ -42,5 +43,6 @@ module.exports = {
     "react-native/no-inline-styles": 2,
     "react-native/no-color-literals": 2,
     "react-native/no-raw-text": 2,
+    "react/display-name": 0,
   },
 };
