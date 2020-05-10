@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getCourses } from '../store/actions/actions';
 
-import Preloader from '../components/Preloader.js';
+import Preloader from '../components/common/Preloader.js';
+import CustomStatusBar from '../components/common/CustomStatusBar.js';
+import ArrowSwitch from '../components/common/ArrowSwitch';
 
 const MainScreen = AppNavigator => {
   const dispatch = useDispatch();
@@ -17,6 +19,13 @@ const MainScreen = AppNavigator => {
   useEffect(() => {
     dispatch(getCourses(setIsLoading));
   }, [])
+
+  const getDirection = (dif) => {
+    if(dif > 0) {
+      return 'top';
+    }
+    return 'bottom';
+  };
 
   const getColor = (dif) => {
     if(dif > 0) {
@@ -68,15 +77,21 @@ const MainScreen = AppNavigator => {
                     >
                       {(item.difference)}
                     </Text>
-                    <Text
-                      style={[
-                        styles.text,
-                        styles.value,
-                        getColor(item.difference)
-                      ]}
-                    >
-                      {(item.percentageChange) + '%'}
-                    </Text>
+
+                    <View style={styles.percentageBlock}>
+                      <ArrowSwitch
+                        direction={getDirection(item.difference)}
+                      />
+                      <Text
+                        style={[
+                          styles.text,
+                          styles.value,
+                          getColor(item.difference)
+                        ]}
+                      >
+                        {(item.percentageChange) + '%'}
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>),
