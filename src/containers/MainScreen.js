@@ -33,7 +33,7 @@ const MainScreen = AppNavigator => {
 
   return (
     <View style={styles.container}>
-      {/*<HomePage />*/}
+      <CustomStatusBar />
       {(isLoading === true && <Preloader/>) ||
         <SafeAreaView style={styles.container}>
           <ScrollView
@@ -131,7 +131,10 @@ const styles = StyleSheet.create({
   },
   red: {
     color: '#E92360',
-  }
+  },
+  percentageBlock: {
+    flexDirection: 'row',
+  },
 })
 
 export default MainScreen
