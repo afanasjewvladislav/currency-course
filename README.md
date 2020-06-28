@@ -1,8 +1,8 @@
+# Currency Course
+
 <a href="https://github.com/afanasjewvladick/currency-course/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license." />
 </a>
-
-#Currency Course
 
 ## Развертывание проекта
 
