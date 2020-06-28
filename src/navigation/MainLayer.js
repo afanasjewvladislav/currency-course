@@ -9,8 +9,6 @@ import CurrencyConverterScreen from '../containers/CurrencyConverterScreen';
 import HomeIcon from "../components/icon/HomeIcon.js";
 import MoneyBagIcon from "../components/icon/MoneyBagIcon.js";
 
-
-
 const MainTabNavigator = createBottomTabNavigator({
   MainScreen: {
     screen: MainScreen,

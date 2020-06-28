@@ -1,9 +1,9 @@
 {
   "name": "currency-course",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "author": {
-    "name": "Afanasjew Vladislav",
+    "name": "Afanasjew Vladislav"
   },
   "scripts": {
     "android": "react-native run-android",
@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.6.5",
     "@react-navigation/native": "^5.6.1",
     "axios": "^0.19.2",
     "react": "^16.13.1",
