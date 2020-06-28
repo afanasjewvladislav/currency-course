@@ -28,9 +28,9 @@ home: ## export JAVA_HOME
 	@cd ~/Android/Sdk/tools && export JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre"
 
 apk-create: ## create apk image
-	@cd ~/react-native/android && ./gradlew assembleRelease
+	@cd ~/projects/react-native/android && ./gradlew assembleRelease
 
 delete: ## delete old images
-	@cd ~/react-native/android && ./gradlew clean
+	@cd ~/projects/react-native/android && ./gradlew clean
 
 
