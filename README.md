@@ -1,31 +1,22 @@
-## Build Setup
+#Currency Course
 
-``` bash
-# install dependencies
-npm install
 
-# Запуск эмулятора
-make emulator
+<p align="center">
+  <a href="https://github.com/afanasjewvladick/currency-course/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license." />
+  </a>
+</p>
 
-# Создание Apk образа
-make apk-create
+## Развертывание проекта
 
-# Удаление образов
-make delete
+* установите зависимости - `npm i`;
+* запустите приложение - `npm run start`;
+* свяжите приложение с эмулятором или смартфоном - `npm run android` или `npm run ios`.
 
-# Установка пути при настройке эмулятора
-make home
 
-# Установка и сборка приложения на эмуляторе android
-npm run android
+## Создание apk-образа
 
-# Установка и сборка приложения на эмуляторе ios
-npm run ios
+* Убедитесь что установлен [gradle](https://gradle.org/).
+* Выполните `make apk-create`.
 
-# Запуск приложения после установки
-npm run start
-
-# Установка и сборка релизной версии приложения на эмуляторе android
-npm run release-start
-
-```
+В случае ошибки перейдите в папку `android`  и выполните `./gradlew assembleRelease`.
